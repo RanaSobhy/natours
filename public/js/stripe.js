@@ -8,9 +8,7 @@ import { showAlert } from './alert';
 export const bookTour = async (tourId) => {
   try {
     //1) get session from server
-    const session = await axios(
-      `http://localhost:3000/api/v1/bookings/checkout-session/${tourId}`
-    );
+    const session = await axios(`/api/v1/bookings/checkout-session/${tourId}`);
 
     location.assign(session.data.session.url);
     //2) Create chechout form + charge credit card
