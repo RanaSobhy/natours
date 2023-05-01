@@ -30,6 +30,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(cors());
 
+app.options('*', cors());
+
 //set security http headers
 app.use(
   helmet.contentSecurityPolicy({
