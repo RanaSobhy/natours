@@ -1,0 +1,20 @@
+doctype html
+html
+    head
+        //- Interpolation looks similar to template strings in ES6
+        //- used when it contains string & javascript
+        title Natours | #{tour}
+        link(rel='stylesheet' href='css/style.css')
+        link(rel='shortcut icon', href='img/favicon.png', type='image/png')
+    
+    body
+        h1= tour
+        //- buffered code that will run javascript and use it's output
+        h2= user.toUpperCase()
+        // h1 The Park Camper (visible as html comment)
+        //- h1 The Park Camper (not visible as html comment)
+        //- unbuffered code that will run javascript and has no output
+        - const x = 9
+        //- buffered code that will run javascript and use it's output
+        h2= 2 * x
+        p This is just some text
